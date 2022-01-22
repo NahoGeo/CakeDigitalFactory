@@ -1,0 +1,7 @@
+{
+  "name": "CakeDigitalFactory",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
