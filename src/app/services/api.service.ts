@@ -8,7 +8,7 @@ import { User } from '../interfaces/user';
 })
 export class ApiService {
 
-  http: "http://localhost:3000/"
+  http: "http://localhost:3000/api/CakeDigitalFactory"
 
   constructor(private httpClient: HttpClient) { }
 
