@@ -1,0 +1,39 @@
+<!-- <ion-header>
+    <ion-toolbar>
+        <ion-title>product</ion-title>
+    </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+    <ion-item lines="none" class="ion-no-padding">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="inicio/{{product.idCliente}}"></ion-back-button>
+        </ion-buttons>
+    </ion-item>
+    <img [src]="product.img || 'assets/images/noImage.png'" alt="productImg">
+    <div style="width: 100%;">
+        <span style="margin-right: 5%; right: 0; position: absolute;">{{product.precio | currency:'L. '}}</span>
+    </div>
+    <h3 style="width: 100%; text-align: center;">{{product.nombre}}</h3>
+    <p style="width: 100%; text-align: center;"><b>Descripción:</b> {{product.descripcion}}</p>
+    <br>
+    <ion-item>
+        <ion-label position="fixed">Cantidad</ion-label>
+        <ion-input type="number" placeholder="0" [(ngModel)]="cuantity" (ionChange)="totalAdded()"></ion-input>
+    </ion-item>
+    <br>
+    <h4 *ngIf="details.lengh > 0" style="margin-left: 5%;">Agrega extras:</h4>
+    <ion-list>
+        <ion-item (click)="agregarRemoverDetalle()" lines="none" *ngFor="let detail of details">
+            <ion-label style="width: 100%;">{{detail.nombre}} <span style="margin-right: 5%; float: right;">{{detail.precio | currency:'L. '}}</span></ion-label>
+            <ion-checkbox slot="start" [(ngModel)]="detail.seleccionado"></ion-checkbox>
+        </ion-item>
+    </ion-list>
+</ion-content>
+<ion-footer>
+    <ion-toolbar>
+        <ion-button (click)="addOrder()" expand="block">
+            Agregar orden - {{totalAmount | currency:'L. '}}
+        </ion-button>
+    </ion-toolbar>
+</ion-footer>

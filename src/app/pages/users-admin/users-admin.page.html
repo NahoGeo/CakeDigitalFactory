@@ -1,0 +1,21 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>usersAdmin</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<app-header [title]="title"></app-header>
+
+<ion-content>
+    <ion-item lines="full" [routerLink]="['create-client']">
+        <ion-icon slot="end" name="add-circle-outline"></ion-icon>
+        <ion-label>Agregar Cliente</ion-label>
+    </ion-item>
+    <ion-list>
+        <ion-item lines="full" *ngFor="let bakery of bakerys" (click)="editBakery(bakery.id)">
+            <ion-avatar slot="start">
+                <img [src]="bakery.image || 'assets/images/noImage.png'">
+            </ion-avatar>
+            <ion-label class="ion-text-wrap">{{bakery.nombre}}</ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>

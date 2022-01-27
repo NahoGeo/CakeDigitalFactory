@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="sign-in"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Registro</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="Container">
+        <div class="SubContainer">
+            <ion-card-header>
+                <img src="assets/images/logo.png" alt="logo">
+                <h2 style="color: white;">Cake Digital Factory</h2>
+            </ion-card-header>
+            <form>
+                <ion-item>
+                    <ion-label position="floating">Usuario</ion-label>
+                    <ion-input type="text" #user required></ion-input>
+                </ion-item>
+                <br>
+                <ion-item>
+                    <ion-label position="floating">Contraseña</ion-label>
+                    <ion-input type="password" #password required></ion-input>
+                </ion-item>
+                <br>
+                <ion-item>
+                    <ion-label position="floating">Confirmar Contraseña</ion-label>
+                    <ion-input type="password" #password2 required></ion-input>
+                </ion-item>
+                <br>
+                <div style="align-content: center;">
+                    <ion-button type="submit" (click)="signUp(user, password, password2)" color="dark" expand="block">Registrarse</ion-button>
+                </div>
+            </form>
+        </div>
+    </div>
+</ion-content>
