@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { BakeryPageRoutingModule } from './bakery-routing.module';
 
 import { BakeryPage } from './bakery.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    BakeryPageRoutingModule
+    BakeryPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [BakeryPage]
 })

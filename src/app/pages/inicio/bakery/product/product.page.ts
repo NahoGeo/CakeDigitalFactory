@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DbService } from 'src/app/services/db.service';
 import { Producto } from 'src/app/interfaces/producto';
 import { Detalle } from 'src/app/interfaces/detalle';
@@ -15,15 +15,23 @@ export class ProductPage implements OnInit {
 
   product: Producto
   details: Array<Detalle> = []
-  detailsSelected: Array<Detalle> = []
-  order: Orden
+  order: Orden = {
+    id: 0,
+    idCliente: 0,
+    idProducto: 0,
+    idPedido: 0,
+    cantidad: 0,
+    precio: 0
+  }
+  orderDetailsSelected: Array<OrdenDetalles>=[]
   cuantity: number = 1
   subTotal: number
   totalAmount: number
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private dbSvc: DbService
+    private dbSvc: DbService,
+    private router: Router
     ) { }
 
   ngOnInit() {
@@ -37,26 +45,32 @@ export class ProductPage implements OnInit {
   }
 
   agregarRemoverDetalle() {
-    if(this.detailsSelected.length > 0) {
+    if(this.orderDetailsSelected.length > 0) {
       for(let detail of this.details) {
         if(detail.seleccionado) {
           let addDetail: boolean = true
-          for(let detailSelected of this.detailsSelected) {
+          for(let detailSelected of this.orderDetailsSelected) {
             if(detail.id === detailSelected.id) {
               addDetail = false
             }
           }
           if(addDetail) {
-            this.detailsSelected.push(detail)
+            let orderDetail: OrdenDetalles = {
+              id: 0,
+              idDetalle: detail.id,
+              idOrden: this.order.id,
+              precioDetalle: detail.precio
+            }
+            this.orderDetailsSelected.push(orderDetail)
           }
         }else{
           let removeDetail: boolean = false
-          for(let detailSelected of this.detailsSelected) {
+          for(let detailSelected of this.orderDetailsSelected) {
             if(detail.id === detailSelected.id) {
               removeDetail = true
             }
             if(removeDetail) {
-              this.detailsSelected = this.detailsSelected.filter(oldDetail=>{return detail.id !== oldDetail.id})
+              this.orderDetailsSelected = this.orderDetailsSelected.filter(oldDetail=>{return detail.id !== oldDetail.id})
             }
           }
         }
@@ -64,7 +78,13 @@ export class ProductPage implements OnInit {
     }else{
       for(let detail of this.details) {
         if(detail.seleccionado) {
-          this.detailsSelected.push(detail)
+          let orderDetail: OrdenDetalles = {
+            id: 0,
+            idDetalle: detail.id,
+            idOrden: this.order.id,
+            precioDetalle: detail.precio
+          }
+          this.orderDetailsSelected.push(orderDetail)
         }
       }
     }
@@ -73,27 +93,21 @@ export class ProductPage implements OnInit {
 
   totalAdded() {
     let detailTotal: number = 0
-    for(let detail of this.details) {
-      for(let detailSelected of this.detailsSelected){
-        if(detail.id === detailSelected.id){
-          detailTotal += detail.precio
-        }
-      }
+    for(let orderDetail of this.orderDetailsSelected){
+      detailTotal += orderDetail.precioDetalle
     }
     this.totalAmount = (this.product.precio + detailTotal) * this.cuantity
   }
 
   addOrder() {
-    if(!this.order.idPedido){
-      this.order = {
-        idProducto: this.product.id,
-        cantidad: this.cuantity,
-        precio: this.totalAmount
-      }
-      this.order.idPedido = this.dbSvc.addNewPedido(this.order, this.detailsSelected)
-    }else{
-      this.dbSvc.addOrder(this.order, this.detailsSelected)
+    this.order = {
+      idCliente: this.product.idCliente,
+      idProducto: this.product.id,
+      cantidad: this.cuantity,
+      precio: this.totalAmount
     }
+    this.dbSvc.addOrder(this.order, this.orderDetailsSelected)
+    this.router.navigate([`/inicio/${this.product.id}`])
   }
 
 }

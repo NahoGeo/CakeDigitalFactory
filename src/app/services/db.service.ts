@@ -168,59 +168,42 @@ export class DbService {
     return detailsList
   }
 
-  addNewPedido(order: Orden, orderDetailsReceive: Array<Detalle>) {
+  addOrder(order: Orden, orderDetailsReceive: Array<OrdenDetalles>) {
+    this.orders.push(order)
+    
+    this.saveOrderDetails(orderDetailsReceive)
+  }
+
+  editOrder() {
+
+  }
+
+  private saveOrderDetails(orderDetailsReceive: Array<OrdenDetalles>) {
+    if(orderDetailsReceive.length > 0){
+      for(let orderdetails of orderDetailsReceive){
+        this.orderDetails.push(orderdetails)
+      }
+    }
+    console.log(this.orders, this.orderDetails)
+  }
+
+  processPedido() {
+    let isv: number = 0
+    let subTotal: number = 0
+    for(let order of this.orders) {
+      subTotal += order.precio
+    }
+    isv = subTotal * 0.15
+    console.log(subTotal, isv)
     let pedido: Pedido = {
       id: this.pedidos.length + 1,
       idUsuario: this.usuario.id,
-      estado: "creando",
-      isv: order.precio * 0.15,
-      total: order.precio + order.precio * 0.15
+      estado: "pendiente",
+      isv,
+      total: subTotal + isv
     }
-    order.id = this.orders.length + 1
-    order.idPedido = pedido.id
-    this.orders.push(order)
-    this.pedidos.push(pedido)
-    this.saveOrderDetails(order.id, orderDetailsReceive)
-
-    this.makingPedido = true
-    this.isPedidoActive = true
     this.pedidoId = pedido.id
-    return pedido.id
-  }
-
-  addOrder(order: Orden, orderDetailsReceive: Array<Detalle>) {
-    let newIsv: number
-    let newTotal: number
-    order.id = this.orders.length + 1
-    newIsv: order.precio * 0.15
-    newTotal: order.precio + order.precio * 0.15
-    this.orders.push(order)
-    for(let pedido of this.pedidos){
-      if(pedido.id === order.idPedido) {
-        pedido.isv = pedido.isv + newIsv
-        pedido.total = pedido.total + newTotal
-      }
-    }
-    this.saveOrderDetails(order.id, orderDetailsReceive)
-  }
-
-  private saveOrderDetails(idOrder: number, orderDetailsReceive: Array<Detalle>) {
-    for(let orderdetailReceive of orderDetailsReceive){
-      this.orderDetails.push({
-        id: this.orderDetails.length + 1,
-        idOrden: idOrder,
-        idDetalle: orderdetailReceive.id,
-        precioDetalle: orderdetailReceive.precio
-      })
-    }
+    this.pedidos.push(pedido)
     console.log(this.orders, this.orderDetails, this.pedidos)
-  }
-
-  processPedido(idPedido: number) {
-    for(let pedido of this.pedidos) {
-      if(pedido.id === idPedido && pedido.estado === "creando"){
-        pedido.estado = "pendiente"
-      }
-    }
   }
 }

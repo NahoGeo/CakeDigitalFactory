@@ -47,7 +47,6 @@ export class SignInPage implements OnInit {
         console.error(err)
       }
     ) */
-    this.dbSvc.setUser(this.user)
     this.router.navigate(['/inicio'])
   }
 

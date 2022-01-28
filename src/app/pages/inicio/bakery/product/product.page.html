@@ -22,7 +22,7 @@
         <ion-input type="number" placeholder="0" [(ngModel)]="cuantity" (ionChange)="totalAdded()"></ion-input>
     </ion-item>
     <br>
-    <h4 *ngIf="details.lengh > 0" style="margin-left: 5%;">Agrega extras:</h4>
+    <h4 *ngIf="details.length > 0" style="margin-left: 5%;">Agrega extras:</h4>
     <ion-list>
         <ion-item (click)="agregarRemoverDetalle()" lines="none" *ngFor="let detail of details">
             <ion-label style="width: 100%;">{{detail.nombre}} <span style="margin-right: 5%; float: right;">{{detail.precio | currency:'L. '}}</span></ion-label>

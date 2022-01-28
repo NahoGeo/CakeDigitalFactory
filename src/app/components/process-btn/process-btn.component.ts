@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DbService } from 'src/app/services/db.service';
 
 @Component({
   selector: 'app-process-btn',
@@ -7,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProcessBtnComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private dbSvc: DbService
+  ) { }
 
   ngOnInit() {}
+
+  processPedido() {
+    this.dbSvc.processPedido()
+  }
 
 }

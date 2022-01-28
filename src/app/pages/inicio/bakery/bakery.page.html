@@ -29,10 +29,8 @@
         </ion-row>
     </ion-grid>
 </ion-content>
-<ion-footer *ngIf="isPedidoActive">
+<ion-footer>
     <ion-toolbar>
-        <ion-button (click)="onClick()" expand="block">
-            Process
-        </ion-button>
+        <app-process-btn></app-process-btn>
     </ion-toolbar>
 </ion-footer>
