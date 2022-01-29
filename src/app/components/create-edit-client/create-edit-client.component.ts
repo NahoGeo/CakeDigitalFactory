@@ -11,6 +11,7 @@ import { Camera, CameraSource, CameraResultType } from '@capacitor/camera';
 export class CreateEditClientComponent implements OnInit {
 
   @Input() client: User
+  actions: string
 
   rols = ["usuario", "admin", "cliente"]
 
@@ -18,7 +19,13 @@ export class CreateEditClientComponent implements OnInit {
     private actionCtrl: ActionSheetController,
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if(this.client.id !== 0){
+      this.actions = "editar"
+    }else{
+      this.actions = "Crear"
+    }
+  }
 
   async showOptions() {
     const buttons = [{

@@ -11,12 +11,12 @@ export class CreateClientPage implements OnInit {
   client: User = {
     id: 0,
     img: "",
-    nombre: "helloworld",
-    contrasena: "fulano",
-    descripcion: "cualquiercosa",
-    correo: "correo@cliente.com",
-    direccion: "a la par de una casa",
-    telefono: "32502753",
+    nombre: "",
+    contrasena: "",
+    descripcion: "",
+    correo: "",
+    direccion: "",
+    telefono: "",
     rol: "usuario"
   }
 

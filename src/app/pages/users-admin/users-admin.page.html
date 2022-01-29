@@ -11,7 +11,7 @@
         <ion-label>Agregar Cliente</ion-label>
     </ion-item>
     <ion-list>
-        <ion-item lines="full" *ngFor="let bakery of bakerys" (click)="editBakery(bakery.id)">
+        <ion-item lines="full" *ngFor="let bakery of bakerys" [routerLink]="[bakery.id]">
             <ion-avatar slot="start">
                 <img [src]="bakery.image || 'assets/images/noImage.png'">
             </ion-avatar>

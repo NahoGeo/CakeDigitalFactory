@@ -5,8 +5,10 @@ import { AlertController, AlertButton, LoadingController, AlertInput } from '@io
   providedIn: 'root'
 })
 export class AlertControllerService {
-alertPopUp: HTMLIonAlertElement
-isLoading = false 
+  
+  alertPopUp: HTMLIonAlertElement
+  isLoading = false 
+
   constructor(
     private alertController: AlertController,
     private loadingCtrl: LoadingController
@@ -41,7 +43,7 @@ isLoading = false
             console.log('Confirm Cancel: blah');
           }
         }, {
-          text: 'Okay',
+          text: 'Ok',
           handler: () => {
             console.log('Confirm Okay');
           }
@@ -74,7 +76,7 @@ isLoading = false
     if (messageReceived) {
       text = messageReceived
     }else{
-      text = 'Please wait'
+      text = 'Por Favor Espere'
     }
     this.isLoading = true;
     return await this.loadingCtrl.create({

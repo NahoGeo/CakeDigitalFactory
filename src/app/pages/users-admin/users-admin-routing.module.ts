@@ -13,7 +13,7 @@ const routes: Routes = [
     loadChildren: () => import('./create-client/create-client.module').then( m => m.CreateClientPageModule)
   },
   {
-    path: 'edit-client',
+    path: ':clientId',
     loadChildren: () => import('./edit-client/edit-client.module').then( m => m.EditClientPageModule)
   }
 ];

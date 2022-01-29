@@ -23,8 +23,8 @@ export class ApiService {
     this.user = this.dbSvc.usuario
   }
 
-  getUser(): Observable<any> {
-    return this.httpClient.get<any>(`${this.http}/get-user`)
+  getUsers(): Observable<any> {
+    return this.httpClient.get<any>(`${this.http}/get-users`)
   }
 
   getBakerys(): Observable<any> {
@@ -39,12 +39,20 @@ export class ApiService {
     return this.httpClient.post<User>(`${this.http}/login`, user)
   }
 
+  signUp(user: User): Observable<any> {
+    return this.httpClient.post<User>(`${this.http}/create-user`, user)
+  }
+
+  editUser(user: User): Observable<any> {
+    return this.httpClient.put<User>(`${this.http}/update-usuario/${this.user.id}`, user)
+  }
+
   addOrder(order: Orden, detailsSelected: Array<OrdenDetalles>): Observable<any> {
     let data = [
       order,
       detailsSelected
     ]
-    return this.httpClient.post<any>(`${this.http}/add-order/${this.dbSvc.usuario.id}`, data)
+    return this.httpClient.post<any>(`${this.http}/add-order/${this.user.id}`, data)
   }
 
   processPedido(order: Array<Orden>, detailsSelected: Array<OrdenDetalles>): Observable<any> {
@@ -52,6 +60,10 @@ export class ApiService {
       order,
       detailsSelected
     ]
-    return this.httpClient.post<any>(`${this.http}/create-pedido/${this.dbSvc.usuario.id}`, data)
+    return this.httpClient.post<any>(`${this.http}/create-pedido/${this.user.id}`, data)
+  }
+
+  getPedidos() {
+    return this.httpClient.get<any>(`${this.http}/get-pedidos/${this.user.id}`)
   }
 }

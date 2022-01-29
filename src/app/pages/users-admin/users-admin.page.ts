@@ -28,4 +28,8 @@ export class UsersAdminPage implements OnInit {
     this.bakerys = this.dbSvc.getBakerys()
   }
 
+  editBakery(id: number) {
+    
+  }
+
 }

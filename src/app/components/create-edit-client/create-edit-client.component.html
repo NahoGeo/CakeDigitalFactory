@@ -6,7 +6,7 @@
         <ion-label position="floating">Nombre</ion-label>
         <ion-input [(ngModel)]="client.nombre"></ion-input>
     </ion-item>
-    <ion-item>
+    <ion-item *ngIf="client.id === 0">
         <ion-label position="floating">Contraseña</ion-label>
         <ion-input [(ngModel)]="client.contrasena"></ion-input>
     </ion-item>
@@ -28,13 +28,13 @@
     </ion-item>
     <ion-item>
         <ion-label>Rol</ion-label>
-        <ion-select [cancelText]="cancelar" [(ngModel)]="client.rol" [placeholder]="usuario" (ionChange)="valuesSelected($event)">
+        <ion-select class="ion-text-capitalize" [cancelText]="cancelar" [(ngModel)]="client.rol" [placeholder]="usuario" (ionChange)="valuesSelected($event)">
             <ion-select-option *ngFor="let rol of rols" value="{{rol}}" class="ion-text-capitalize">{{rol}}</ion-select-option>
         </ion-select>
     </ion-item>
 </ion-card>
 <ion-footer>
     <ion-toolbar>
-        <ion-button (click)="checkFields()" expand="block">crear</ion-button>
+        <ion-button (click)="checkFields()" expand="block">{{actions}}</ion-button>
     </ion-toolbar>
 </ion-footer>

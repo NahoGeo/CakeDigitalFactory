@@ -28,31 +28,56 @@ export class DbService {
       id: 1,
       img: "",
       nombre: "Reposteria mi repo 1",
-      descripcion: "somos una reposteria enfocada en complacer los gustos de nuestros clientes y brindarles una atencion de calidad"
+      contrasena: "contrasena123",
+      descripcion: "somos una reposteria enfocada en complacer los gustos de nuestros clientes y brindarles una atencion de calidad",
+      correo: "cualquier@correo.com",
+      direccion: "a la par de tu casa",
+      telefono: "1234-5678",
+      rol: "cliente"
     },
     {
       id: 2,
       img: "",
       nombre: "Reposteria mi repo 2",
-      descripcion: "somos una reposteria enfocada en complacer los gustos de nuestros clientes y brindarles una atencion de calidad"
+      contrasena: "contrasena123",
+      descripcion: "somos una reposteria enfocada en complacer los gustos de nuestros clientes y brindarles una atencion de calidad",
+      correo: "cualquier@correo.com",
+      direccion: "a la par de tu casa",
+      telefono: "1234-5678",
+      rol: "cliente"
     },
     {
       id: 3,
       img: "",
       nombre: "Reposteria mi repo 3",
-      descripcion: "somos una reposteria enfocada en complacer los gustos de nuestros clientes y brindarles una atencion de calidad"
+      contrasena: "contrasena123",
+      descripcion: "somos una reposteria enfocada en complacer los gustos de nuestros clientes y brindarles una atencion de calidad",
+      correo: "cualquier@correo.com",
+      direccion: "a la par de tu casa",
+      telefono: "1234-5678",
+      rol: "cliente"
     },
     {
       id: 4,
       img: "",
       nombre: "Reposteria mi repo 4",
-      descripcion: "somos una reposteria enfocada en complacer los gustos de nuestros clientes y brindarles una atencion de calidad"
+      contrasena: "contrasena123",
+      descripcion: "somos una reposteria enfocada en complacer los gustos de nuestros clientes y brindarles una atencion de calidad",
+      correo: "cualquier@correo.com",
+      direccion: "a la par de tu casa",
+      telefono: "1234-5678",
+      rol: "cliente"
     },
     {
       id: 5,
       img: "",
       nombre: "Reposteria mi repo 5",
-      descripcion: "somos una reposteria enfocada en complacer los gustos de nuestros clientes y brindarles una atencion de calidad"
+      contrasena: "contrasena123",
+      descripcion: "somos una reposteria enfocada en complacer los gustos de nuestros clientes y brindarles una atencion de calidad",
+      correo: "cualquier@correo.com",
+      direccion: "a la par de tu casa",
+      telefono: "1234-5678",
+      rol: "cliente"
     }
   ]
 

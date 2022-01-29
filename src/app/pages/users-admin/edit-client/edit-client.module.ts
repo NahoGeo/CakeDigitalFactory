@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { EditClientPageRoutingModule } from './edit-client-routing.module';
 
 import { EditClientPage } from './edit-client.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    EditClientPageRoutingModule
+    EditClientPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [EditClientPage]
 })
