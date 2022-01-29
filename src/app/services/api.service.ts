@@ -44,7 +44,7 @@ export class ApiService {
   }
 
   editUser(user: User): Observable<any> {
-    return this.httpClient.put<User>(`${this.http}/update-usuario/${this.user.id}`, user)
+    return this.httpClient.put<User>(`${this.http}/update-usuario/${this.user.Id}`, user)
   }
 
   addOrder(order: Orden, detailsSelected: Array<OrdenDetalles>): Observable<any> {
@@ -52,7 +52,7 @@ export class ApiService {
       order,
       detailsSelected
     ]
-    return this.httpClient.post<any>(`${this.http}/add-order/${this.user.id}`, data)
+    return this.httpClient.post<any>(`${this.http}/add-order/${this.user.Id}`, data)
   }
 
   processPedido(order: Array<Orden>, detailsSelected: Array<OrdenDetalles>): Observable<any> {
@@ -60,10 +60,10 @@ export class ApiService {
       order,
       detailsSelected
     ]
-    return this.httpClient.post<any>(`${this.http}/create-pedido/${this.user.id}`, data)
+    return this.httpClient.post<any>(`${this.http}/create-pedido/${this.user.Id}`, data)
   }
 
   getPedidos() {
-    return this.httpClient.get<any>(`${this.http}/get-pedidos/${this.user.id}`)
+    return this.httpClient.get<any>(`${this.http}/get-pedidos/${this.user.Id}`)
   }
 }

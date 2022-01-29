@@ -1,7 +1,7 @@
 export interface Detalle {
-  id: number
-  idProducto: number
-  nombre: string
-  precio: number
+  Id: number
+  IdProducto: number
+  Nombre: string
+  Precio: number
   seleccionado: boolean
 }

@@ -9,15 +9,15 @@ import { User } from 'src/app/interfaces/user';
 export class CreateClientPage implements OnInit {
 
   client: User = {
-    id: 0,
-    img: "",
-    nombre: "",
-    contrasena: "",
-    descripcion: "",
-    correo: "",
-    direccion: "",
-    telefono: "",
-    rol: "usuario"
+    Id: 0,
+    Img: "",
+    Nombre: "",
+    Contrasena: "",
+    Descripcion: "",
+    Correo: "",
+    Direccion: "",
+    Telefono: "",
+    Rol: "usuario"
   }
 
   constructor() { }

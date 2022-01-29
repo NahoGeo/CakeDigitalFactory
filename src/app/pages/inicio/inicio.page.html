@@ -1,14 +1,14 @@
 <app-header [title]="title"></app-header>
 
 <ion-content>
-    <ion-card *ngFor="let bakery of bakerys" [routerLink]="[bakery.id]">
-        <img [src]="bakery.img || 'assets/images/noImage.png'" alt="cardImg">
+    <ion-card *ngFor="let bakery of bakerys" [routerLink]="[bakery.Id]">
+        <img [src]="bakery.Img || 'assets/images/noImage.png'" alt="cardImg">
         <ion-card-header>
-            <ion-card-title>{{bakery.nombre}}</ion-card-title>
+            <ion-card-title>{{bakery.Nombre}}</ion-card-title>
         </ion-card-header>
 
         <ion-card-content>
-            <p><b>Descripción:</b> {{bakery.descripcion}}</p>
+            <p><b>Descripción:</b> {{bakery.Descripcion}}</p>
         </ion-card-content>
     </ion-card>
 </ion-content>

@@ -20,7 +20,7 @@ export class CreateEditClientComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    if(this.client.id !== 0){
+    if(this.client.Id !== 0){
       this.actions = "editar"
     }else{
       this.actions = "Crear"
@@ -57,11 +57,11 @@ export class CreateEditClientComponent implements OnInit {
       resultType: CameraResultType.DataUrl,
       source
     })
-    this.client.img = image.dataUrl
+    this.client.Img = image.dataUrl
   }
 
   valuesSelected(e) {
-    this.client.rol = e.detail.value
+    this.client.Rol = e.detail.value
   }
 
   checkFields(){

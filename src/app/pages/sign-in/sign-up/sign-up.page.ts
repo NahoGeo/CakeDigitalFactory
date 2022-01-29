@@ -51,7 +51,7 @@ export class SignUpPage implements OnInit {
       /* this.apiSvc.signUp(this.user).subscribe(
         res=>{
           if(res.message === `Usuario ${res.Nombre} creado con exito`) {
-            delete
+            delete res.data.contraseña
             this.user = res.data
             this.dbSvc.setUser(this.user)
             this.router.navigate(['/inicio'])

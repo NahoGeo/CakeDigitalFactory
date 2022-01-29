@@ -14,9 +14,9 @@ export class DbService {
   constructor() { }
 
   usuario: User = {
-    id: 1,
-    nombre: "Oscar Bonilla",
-    rol: "admin"
+    Id: 1,
+    Nombre: "Oscar Bonilla",
+    Rol: "admin"
   }
 
   setUser(user: User) {
@@ -25,59 +25,59 @@ export class DbService {
 
   private bakerys:Array<User>=[
     {
-      id: 1,
-      img: "",
-      nombre: "Reposteria mi repo 1",
-      contrasena: "contrasena123",
-      descripcion: "somos una reposteria enfocada en complacer los gustos de nuestros clientes y brindarles una atencion de calidad",
-      correo: "cualquier@correo.com",
-      direccion: "a la par de tu casa",
-      telefono: "1234-5678",
-      rol: "cliente"
+      Id: 1,
+      Img: "",
+      Nombre: "Reposteria mi repo 1",
+      Contrasena: "contrasena123",
+      Descripcion: "somos una reposteria enfocada en complacer los gustos de nuestros clientes y brindarles una atencion de calidad",
+      Correo: "cualquier@correo.com",
+      Direccion: "a la par de tu casa",
+      Telefono: "1234-5678",
+      Rol: "cliente"
     },
     {
-      id: 2,
-      img: "",
-      nombre: "Reposteria mi repo 2",
-      contrasena: "contrasena123",
-      descripcion: "somos una reposteria enfocada en complacer los gustos de nuestros clientes y brindarles una atencion de calidad",
-      correo: "cualquier@correo.com",
-      direccion: "a la par de tu casa",
-      telefono: "1234-5678",
-      rol: "cliente"
+      Id: 2,
+      Img: "",
+      Nombre: "Reposteria mi repo 2",
+      Contrasena: "contrasena123",
+      Descripcion: "somos una reposteria enfocada en complacer los gustos de nuestros clientes y brindarles una atencion de calidad",
+      Correo: "cualquier@correo.com",
+      Direccion: "a la par de tu casa",
+      Telefono: "1234-5678",
+      Rol: "cliente"
     },
     {
-      id: 3,
-      img: "",
-      nombre: "Reposteria mi repo 3",
-      contrasena: "contrasena123",
-      descripcion: "somos una reposteria enfocada en complacer los gustos de nuestros clientes y brindarles una atencion de calidad",
-      correo: "cualquier@correo.com",
-      direccion: "a la par de tu casa",
-      telefono: "1234-5678",
-      rol: "cliente"
+      Id: 3,
+      Img: "",
+      Nombre: "Reposteria mi repo 3",
+      Contrasena: "contrasena123",
+      Descripcion: "somos una reposteria enfocada en complacer los gustos de nuestros clientes y brindarles una atencion de calidad",
+      Correo: "cualquier@correo.com",
+      Direccion: "a la par de tu casa",
+      Telefono: "1234-5678",
+      Rol: "cliente"
     },
     {
-      id: 4,
-      img: "",
-      nombre: "Reposteria mi repo 4",
-      contrasena: "contrasena123",
-      descripcion: "somos una reposteria enfocada en complacer los gustos de nuestros clientes y brindarles una atencion de calidad",
-      correo: "cualquier@correo.com",
-      direccion: "a la par de tu casa",
-      telefono: "1234-5678",
-      rol: "cliente"
+      Id: 4,
+      Img: "",
+      Nombre: "Reposteria mi repo 4",
+      Contrasena: "contrasena123",
+      Descripcion: "somos una reposteria enfocada en complacer los gustos de nuestros clientes y brindarles una atencion de calidad",
+      Correo: "cualquier@correo.com",
+      Direccion: "a la par de tu casa",
+      Telefono: "1234-5678",
+      Rol: "cliente"
     },
     {
-      id: 5,
-      img: "",
-      nombre: "Reposteria mi repo 5",
-      contrasena: "contrasena123",
-      descripcion: "somos una reposteria enfocada en complacer los gustos de nuestros clientes y brindarles una atencion de calidad",
-      correo: "cualquier@correo.com",
-      direccion: "a la par de tu casa",
-      telefono: "1234-5678",
-      rol: "cliente"
+      Id: 5,
+      Img: "",
+      Nombre: "Reposteria mi repo 5",
+      Contrasena: "contrasena123",
+      Descripcion: "somos una reposteria enfocada en complacer los gustos de nuestros clientes y brindarles una atencion de calidad",
+      Correo: "cualquier@correo.com",
+      Direccion: "a la par de tu casa",
+      Telefono: "1234-5678",
+      Rol: "cliente"
     }
   ]
 
@@ -85,28 +85,28 @@ export class DbService {
 
   private productos: Array<Producto>=[
     {
-      id: 1,
-      idCliente: 1,
-      img: "",
-      nombre: "Pastel para 8 personas",
-      descripcion: "Pastel con crema chantilli con decorado al borde perfecto para compartir con tu familia",
-      precio: 150
+      Id: 1,
+      IdCliente: 1,
+      Img: "",
+      Nombre: "Pastel para 8 personas",
+      Descripcion: "Pastel con crema chantilli con decorado al borde perfecto para compartir con tu familia",
+      Precio: 150
     },
     {
-      id: 2,
-      idCliente: 1,
-      img: "",
-      nombre: "Pastel para 12 personas",
-      descripcion: "Pastel con crema chantilli con decorado al borde perfecto para compartir con tu familia",
-      precio: 300
+      Id: 2,
+      IdCliente: 1,
+      Img: "",
+      Nombre: "Pastel para 12 personas",
+      Descripcion: "Pastel con crema chantilli con decorado al borde perfecto para compartir con tu familia",
+      Precio: 300
     },
     {
-      id: 3,
-      idCliente: 1,
-      img: "",
-      nombre: "Pastel para 20 personas",
-      descripcion: "Pastel con crema chantilli con decorado al borde perfecto para compartir con tu familia",
-      precio: 450
+      Id: 3,
+      IdCliente: 1,
+      Img: "",
+      Nombre: "Pastel para 20 personas",
+      Descripcion: "Pastel con crema chantilli con decorado al borde perfecto para compartir con tu familia",
+      Precio: 450
     }
   ]
 
@@ -120,31 +120,31 @@ export class DbService {
 
   private details: Array<Detalle>=[
     {
-      id: 1,
-      idProducto: 1,
-      nombre: "Chispas de Chocolate",
-      precio: 15,
+      Id: 1,
+      IdProducto: 1,
+      Nombre: "Chispas de Chocolate",
+      Precio: 15,
       seleccionado: false
     },
     {
-      id: 2,
-      idProducto: 1,
-      nombre: "Chispas de Dulce",
-      precio: 15,
+      Id: 2,
+      IdProducto: 1,
+      Nombre: "Chispas de Dulce",
+      Precio: 15,
       seleccionado: false
     },
     {
-      id: 3,
-      idProducto: 1,
-      nombre: "Fresas",
-      precio: 40,
+      Id: 3,
+      IdProducto: 1,
+      Nombre: "Fresas",
+      Precio: 40,
       seleccionado: false
     },
     {
-      id: 4,
-      idProducto: 1,
-      nombre: "Cerezas",
-      precio: 60,
+      Id: 4,
+      IdProducto: 1,
+      Nombre: "Cerezas",
+      Precio: 60,
       seleccionado: false
     }
   ]
@@ -156,7 +156,7 @@ export class DbService {
   getBakeryById(id: number){
     let bakerySelected: User
     for(let bakery of [...this.bakerys]) {
-      if(bakery.id === id) {
+      if(bakery.Id === id) {
         bakerySelected = bakery
       }
     }
@@ -166,7 +166,7 @@ export class DbService {
   getProductsByBakeryId(id: number){
     let productsList: Array<Producto>=[]
     for(let product of [...this.productos]) {
-      if(product.idCliente === id) {
+      if(product.IdCliente === id) {
         productsList.push(product)
       }
     }
@@ -176,7 +176,7 @@ export class DbService {
   getProductById(id: number) {
     let productSelected: Producto
     for(let product of [...this.productos]) {
-      if(product.id === id) {
+      if(product.Id === id) {
         productSelected = product
       }
     }
@@ -186,7 +186,7 @@ export class DbService {
   getDetailsByProductId(id: number){
     let detailsList: Array<Detalle>=[]
     for(let detail of [...this.details]) {
-      if(detail.idProducto === id) {
+      if(detail.IdProducto === id) {
         detailsList.push(detail)
       }
     }
@@ -213,21 +213,21 @@ export class DbService {
   }
 
   processPedido() {
-    let isv: number = 0
+    let Isv: number = 0
     let subTotal: number = 0
     for(let order of this.orders) {
-      subTotal += order.precio
+      subTotal += order.Precio
     }
-    isv = subTotal * 0.15
-    console.log(subTotal, isv)
+    Isv = subTotal * 0.15
+    console.log(subTotal, Isv)
     let pedido: Pedido = {
-      id: this.pedidos.length + 1,
-      idUsuario: this.usuario.id,
-      estado: "pendiente",
-      isv,
-      total: subTotal + isv
+      Id: this.pedidos.length + 1,
+      IdUsuario: this.usuario.Id,
+      Estado: "pendiente",
+      Isv,
+      Total: subTotal + Isv
     }
-    this.pedidoId = pedido.id
+    this.pedidoId = pedido.Id
     this.pedidos.push(pedido)
     console.log(this.orders, this.orderDetails, this.pedidos)
   }

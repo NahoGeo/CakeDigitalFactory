@@ -10,19 +10,19 @@
             <ion-back-button defaultHref="inicio"></ion-back-button>
         </ion-buttons>
     </ion-item>
-    <img [src]="bakery.img || 'assets/images/noImage.png'" alt="bakeryImage">
-    <h3 style="width: 100%; text-align: center;">{{bakery.nombre}}</h3>
+    <img [src]="bakery.Img || 'assets/images/noImage.png'" alt="bakeryImage">
+    <h3 style="width: 100%; text-align: center;">{{bakery.Nombre}}</h3>
     <br>
     <ion-grid fixed>
         <ion-row>
             <ion-col *ngFor="let product of products" size="6">
-                <ion-card [routerLink]="[product.id]">
-                    <img [src]="product.img || 'assets/images/noImage.png'" alt="">
+                <ion-card [routerLink]="[product.Id]">
+                    <img [src]="product.Img || 'assets/images/noImage.png'" alt="">
                     <ion-card-header>
-                        <ion-card-title>{{product.nombre}}</ion-card-title>
+                        <ion-card-title>{{product.Nombre}}</ion-card-title>
                     </ion-card-header>
                     <ion-card-content>
-                        <p style="font-size: small;">{{product.descripcion}}</p>
+                        <p style="font-size: small;">{{product.Descripcion}}</p>
                     </ion-card-content>
                 </ion-card>
             </ion-col>

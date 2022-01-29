@@ -1,6 +1,6 @@
 export interface OrdenDetalles {
-  id: number
-  idOrden: number
-  idDetalle: number
-  precioDetalle: number
+  Id: number
+  IdOrden: number
+  IdDetalle: number
+  PrecioDetalle: number
 }

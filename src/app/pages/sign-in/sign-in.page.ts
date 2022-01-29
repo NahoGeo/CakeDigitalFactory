@@ -28,9 +28,9 @@ export class SignInPage implements OnInit {
     userName = userName.value.trim()
     password = password.value.trim()
     this.user = {
-      id: 0,
-      nombre: userName,
-      contrasena: password
+      Id: 0,
+      Nombre: userName,
+      Contrasena: password
     }
     console.log(this.user)
     /* this.apiSvc.signIn(this.user).subscribe(

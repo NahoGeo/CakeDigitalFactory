@@ -1,8 +1,8 @@
 export interface Orden {
-  id?: number
-  idCliente: number
-  idPedido?: number
-  idProducto: number
-  precio: number
-  cantidad: number
+  Id?: number
+  IdCliente: number
+  IdPedido?: number
+  IdProducto: number
+  Precio: number
+  Cantidad: number
 }
